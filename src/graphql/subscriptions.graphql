@@ -1,0 +1,130 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateOrder {
+  onCreateOrder {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateOrder {
+  onUpdateOrder {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteOrder {
+  onDeleteOrder {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProjectManager {
+  onCreateProjectManager {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProjectManager {
+  onUpdateProjectManager {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProjectManager {
+  onDeleteProjectManager {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSupplier {
+  onCreateSupplier {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSupplier {
+  onUpdateSupplier {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSupplier {
+  onDeleteSupplier {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateRequirements {
+  onCreateRequirements {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateRequirements {
+  onUpdateRequirements {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteRequirements {
+  onDeleteRequirements {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}

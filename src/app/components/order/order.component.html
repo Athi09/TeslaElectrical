@@ -1,0 +1,24 @@
+<div class="backCol">
+
+</div>
+
+<!--<div *ngFor="let order of allorders"> -->
+    <table class="tableStyle">
+        <tr class="thStyle">
+            <th class="thStyle">Supplier-Name:</th>
+            <th class="thStyle">Order Date:</th>
+            <th class="thStyle">Site Name:</th>
+            <th class="thStyle">Item-Code:</th>
+            <th class="thStyle">Name of Item:</th>
+            <th class="thStyle">Quantity:</th>
+            <th class="thStyle">Recieved:</th>
+        </tr>
+        <tr *ngFor="let order of allorders">
+            <td class="thStyle">{{ order.SupplierName }} </td>
+            <td class="thStyle">{{ order.createdAt }} </td>
+            <td class="thStyle"> {{ order.SiteName }}</td>
+            <td class="thStyle"> {{ order.ItemCode }}</td>
+            <td class="thStyle"> {{ order.ItemName }}</td>
+            <td class="thStyle"> {{ order.Quantity }}</td>
+        </tr>
+    </table>

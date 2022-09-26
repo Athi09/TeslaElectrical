@@ -1,0 +1,166 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateOrder(
+  $input: CreateOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  createOrder(input: $input, condition: $condition) {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateOrder(
+  $input: UpdateOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  updateOrder(input: $input, condition: $condition) {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteOrder(
+  $input: DeleteOrderInput!
+  $condition: ModelOrderConditionInput
+) {
+  deleteOrder(input: $input, condition: $condition) {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProjectManager(
+  $input: CreateProjectManagerInput!
+  $condition: ModelProjectManagerConditionInput
+) {
+  createProjectManager(input: $input, condition: $condition) {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectManager(
+  $input: UpdateProjectManagerInput!
+  $condition: ModelProjectManagerConditionInput
+) {
+  updateProjectManager(input: $input, condition: $condition) {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectManager(
+  $input: DeleteProjectManagerInput!
+  $condition: ModelProjectManagerConditionInput
+) {
+  deleteProjectManager(input: $input, condition: $condition) {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateSupplier(
+  $input: CreateSupplierInput!
+  $condition: ModelSupplierConditionInput
+) {
+  createSupplier(input: $input, condition: $condition) {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateSupplier(
+  $input: UpdateSupplierInput!
+  $condition: ModelSupplierConditionInput
+) {
+  updateSupplier(input: $input, condition: $condition) {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteSupplier(
+  $input: DeleteSupplierInput!
+  $condition: ModelSupplierConditionInput
+) {
+  deleteSupplier(input: $input, condition: $condition) {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateRequirements(
+  $input: CreateRequirementsInput!
+  $condition: ModelRequirementsConditionInput
+) {
+  createRequirements(input: $input, condition: $condition) {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateRequirements(
+  $input: UpdateRequirementsInput!
+  $condition: ModelRequirementsConditionInput
+) {
+  updateRequirements(input: $input, condition: $condition) {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteRequirements(
+  $input: DeleteRequirementsInput!
+  $condition: ModelRequirementsConditionInput
+) {
+  deleteRequirements(input: $input, condition: $condition) {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}

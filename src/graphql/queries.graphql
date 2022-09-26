@@ -1,0 +1,115 @@
+# this is an auto generated file. This will be overwritten
+query GetOrder($id: ID!) {
+  getOrder(id: $id) {
+    SupplierName
+    SiteName
+    ItemCode
+    ItemName
+    Quantity
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListOrders(
+  $filter: ModelOrderFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      SupplierName
+      SiteName
+      ItemCode
+      ItemName
+      Quantity
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectManager($id: ID!) {
+  getProjectManager(id: $id) {
+    name
+    siteNumber
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListProjectManagers(
+  $filter: ModelProjectManagerFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectManagers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      name
+      siteNumber
+      email
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetSupplier($id: ID!) {
+  getSupplier(id: $id) {
+    name
+    companyName
+    cell
+    email
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListSuppliers(
+  $filter: ModelSupplierFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSuppliers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      name
+      companyName
+      cell
+      email
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetRequirements($id: ID!) {
+  getRequirements(id: $id) {
+    name
+    Quantity
+    siteNumber
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListRequirements(
+  $filter: ModelRequirementsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listRequirements(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      name
+      Quantity
+      siteNumber
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

@@ -1,1 +1,71 @@
-/* You can add global styles to this file, and also import other style files */
+.flex-container {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    color: blueviolet;
+    border-style: groove;
+}
+
+.tesla {
+    font-size: x-large;
+    font-style: Baguet Script;
+}
+
+.logo {
+    height: 80px;
+    width: 150px;
+}
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 153px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: auto; /* Stay at the top */
+    left: auto;
+    background-color: antiquewhite; /* Black */
+    
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+
+  .sidenavv {
+    border-style: inset;
+    background-color: azure;
+    font-size: medium;
+    font-style: italic;
+  }
+
+.footer {
+    text-align: center;
+    height: 80px;
+    background-color: DarkSalmon;
+    color: white;
+    display: flex;
+}
+
+.cbutton {
+    background-color: beige;  
+    border: none;
+    color: darkgoldenrod;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 16px;
+    width: 500px;
+    
+  } 
+
+  .vbutton {
+    background-color: bisque; 
+    border: none;
+    color: cadetblue;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; 
+    font-size: 16px;
+    width: 500px;
+  }
+

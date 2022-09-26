@@ -1,0 +1,17 @@
+{
+  "projectName": "teslaWeb",
+  "version": "3.1",
+  "frontend": "javascript",
+  "javascript": {
+    "framework": "angular",
+    "config": {
+      "SourceDir": "src",
+      "DistributionDir": "dist/teslaWeb",
+      "BuildCommand": "npm run-script build",
+      "StartCommand": "ng serve or npm start"
+    }
+  },
+  "providers": [
+    "awscloudformation"
+  ]
+}
