@@ -2,12 +2,14 @@
 # all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
 input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
 
-type Order @model {
+type Order @model @authorization(rules: [{ allow: public, operations: [create] [read]}]) {
+  id: ID!
   SupplierName: String
   SiteName: String
   ItemCode: String
   ItemName: String
   Quantity: Int
+  email: AWSEmail!
 }
 
 type ProjectManager @model {

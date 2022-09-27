@@ -4,6 +4,7 @@
     align-items: center;
     color: blueviolet;
     border-style: groove;
+    background-color: mediumpurple;
 }
 
 .tesla {
@@ -44,9 +45,8 @@
     display: flex;
 }
 
-.cbutton {
-    background-color: beige;  
-    border: none;
+.cbutton {  
+    
     color: darkgoldenrod;
     padding: 15px 32px;
     text-align: center;
@@ -58,7 +58,6 @@
   } 
 
   .vbutton {
-    background-color: bisque; 
     border: none;
     color: cadetblue;
     padding: 15px 32px;
@@ -67,5 +66,8 @@
     display: inline-block; 
     font-size: 16px;
     width: 500px;
+    
   }
+
+  
 

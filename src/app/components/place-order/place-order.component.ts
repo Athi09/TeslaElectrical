@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { APIService } from 'src/app/API.service';
+import { OneSignal } from 'onesignal-ngx';
 
 @Component({
   selector: 'app-place-order',
@@ -10,9 +11,21 @@ import { APIService } from 'src/app/API.service';
 export class PlaceOrderComponent implements OnInit {
   placeOrderForm: FormGroup | undefined;
   allOrders: any = [];
+  loading: boolean = false;
+  
+  /*
+  express = require("express");
+  cors = require("cors");
+  bodyParser = require("body-parser");
+  nodemailer = require("nodemailer"); */
 
   constructor(private formBuilder: FormBuilder,
-              private apiService: APIService) { }
+              private apiService: APIService,
+              private oneSignal: OneSignal) {
+                this.oneSignal.init({
+                  appId: '1b8918ca-191f-4dbe-86bb-423f77642cb5'
+                });
+               }
 
   ngOnInit(): void {
     this.placeOrderForm = this.formBuilder.group({
@@ -44,6 +57,17 @@ async createOrder() {
   alert("order created");
   
   //debugger;
+}
+
+onHandleTag(tag: string) {
+  this.oneSignal.sendTag("tech", tag).then(() => {
+    console.log(`sent tag: ${tag}`)
+  })
+}
+
+onRegister() {
+  this.loading = true;
+  this
 }
 
 
