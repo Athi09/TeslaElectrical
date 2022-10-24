@@ -1,15 +1,189 @@
 # this is an auto generated file. This will be overwritten
+mutation CreateProjectt(
+  $input: CreateProjecttInput!
+  $condition: ModelProjecttConditionInput
+) {
+  createProjectt(input: $input, condition: $condition) {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectt(
+  $input: UpdateProjecttInput!
+  $condition: ModelProjecttConditionInput
+) {
+  updateProjectt(input: $input, condition: $condition) {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectt(
+  $input: DeleteProjecttInput!
+  $condition: ModelProjecttConditionInput
+) {
+  deleteProjectt(input: $input, condition: $condition) {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateMaterial(
+  $input: CreateMaterialInput!
+  $condition: ModelMaterialConditionInput
+) {
+  createMaterial(input: $input, condition: $condition) {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
+mutation UpdateMaterial(
+  $input: UpdateMaterialInput!
+  $condition: ModelMaterialConditionInput
+) {
+  updateMaterial(input: $input, condition: $condition) {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
+mutation DeleteMaterial(
+  $input: DeleteMaterialInput!
+  $condition: ModelMaterialConditionInput
+) {
+  deleteMaterial(input: $input, condition: $condition) {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
 mutation CreateOrder(
   $input: CreateOrderInput!
   $condition: ModelOrderConditionInput
 ) {
   createOrder(input: $input, condition: $condition) {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
@@ -19,12 +193,12 @@ mutation UpdateOrder(
   $condition: ModelOrderConditionInput
 ) {
   updateOrder(input: $input, condition: $condition) {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
@@ -34,12 +208,12 @@ mutation DeleteOrder(
   $condition: ModelOrderConditionInput
 ) {
   deleteOrder(input: $input, condition: $condition) {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
@@ -132,7 +306,8 @@ mutation CreateRequirements(
   createRequirements(input: $input, condition: $condition) {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
     id
     createdAt
     updatedAt
@@ -145,7 +320,8 @@ mutation UpdateRequirements(
   updateRequirements(input: $input, condition: $condition) {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
     id
     createdAt
     updatedAt
@@ -158,7 +334,44 @@ mutation DeleteRequirements(
   deleteRequirements(input: $input, condition: $condition) {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProjectName(
+  $input: CreateProjectNameInput!
+  $condition: ModelProjectNameConditionInput
+) {
+  createProjectName(input: $input, condition: $condition) {
+    projectName
+    siteName
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectName(
+  $input: UpdateProjectNameInput!
+  $condition: ModelProjectNameConditionInput
+) {
+  updateProjectName(input: $input, condition: $condition) {
+    projectName
+    siteName
+    id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectName(
+  $input: DeleteProjectNameInput!
+  $condition: ModelProjectNameConditionInput
+) {
+  deleteProjectName(input: $input, condition: $condition) {
+    projectName
+    siteName
     id
     createdAt
     updatedAt

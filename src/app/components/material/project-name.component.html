@@ -1,0 +1,157 @@
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form" [formGroup]="projectMaterialForm"
+        (ngSubmit)="createMaterial()" style="float:left">
+        <fieldset class="fieldStyle">
+
+            <!-- Form Name -->
+            <legend class="labelf">
+                <p>Add a new requirement for the selected project</p>
+            </legend>
+
+            <!-- Text input-->
+            <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+                <label class="labelf">Select from a list of Projects:</label>
+                <div class="col-md-4 selectContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                        <select name="state" class="form-control selectpicker" formControlName="projectName" (click)="listMaterial()">
+                            <!--Value="{{ project }}" <option value=" " >Please select id of the product you would like to update</option> -->
+                            <option *ngFor="let project of allProjects" [ngValue]="project.ProjectName"> {{ project.ProjectName }} </option>     
+                            <option>testing</option> 
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text input-->
+
+            <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+                <label class="labelf">Material Description</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                        <textarea class="form-control form-control2" name="comment" placeholder="Material Description"
+                            formControlName="materialDesc"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+                <label class="labelf">Item Quantity</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input formControlName="quantity" placeholder="Quantity" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+                <label class="labelf">Unit of measure</label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input formControlName="unitOfMeasure" placeholder="Unit of measure" class="form-control"
+                            type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-warning">Add item <span
+                            class="glyphicon glyphicon-send"></span></button>
+                    <!--   <button type="submit" class="btn btn-warning" routerLink="/projectName">View list of projects <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" routerLink="/update">Update a project <span class="glyphicon glyphicon-send"></span></button> -->
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+
+<div class="container2">
+
+    <div class="form-group listing">
+        <label class="labelf">Material Description:</label>
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+
+                
+                <ul *ngFor="let mat of allMaterial" style="color:aliceblue">
+                    <li style="color:khaki ">Material name: &nbsp; {{ mat.MaterialDesc }} &nbsp; &nbsp; Quantity: &nbsp;{{mat.Quantity}} &nbsp; &nbsp; UnitOfMeasure: {{mat.UnitOfMeasure}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!---
+    
+       <div class="form-group listing">
+        <label class="labelf">Material Description</label>
+        <div class="col-md-4 inputGroupContainer">
+            <div class="input-group" >
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <div *ngFor="let req of allRequirements">
+                <textarea class="form-control form-control2" name="comment" placeholder="Material Description" >Material name:{{req.name}}
+                    
+                </textarea> </div>
+            </div>
+        </div>
+    </di
+
+     <table class="tableStyle">
+        <tr class="thStyle">
+            <th class="thStyle">Material Description:</th>
+            <th class="thStyle">Total Quantity:</th>
+            <th class="thStyle">Quantity Recieved:</th>
+            <th class="thStyle">Quantity Not Recieved:</th>
+        </tr>
+        <tr *ngFor="let req of allRequirements">
+            <td class="thStyle" contenteditable="true" id="supName">{{ req.name}} </td>
+            <td class="thStyle" contenteditable="true" id="supName">{{ req.Quanity}} </td>
+            <td class="thStyle" contenteditable="true" id="supName"> </td>
+            <td class="thStyle" contenteditable="true" id="supName"> </td>
+            <td class="thStyle"> <button>Confirm Order</button></td>
+        </tr>
+    </table>
+
+    <form class="well form-horizontal" action=" " method="post" id="contact_form" [formGroup]="projectItemsForm"
+        (ngSubmit)="createRequirement()">
+        <fieldset>
+
+             Form Name 
+            <legend class="labelff">
+                <p>List of requirements</p>
+            </legend>
+
+             Text input
+            <div *ngFor="let req of allRequirements">
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2" class="labelf">Item name: {{ req.name }}, Item Quanity: {{ req.Quantity }}
+                </label><br>
+            </div>
+
+            <button type="submit" class="button"> Recieved <span class="glyphicon glyphicon-send"></span></button>
+            <button type="submit" class="button2"> Recieved but short <span
+                    class="glyphicon glyphicon-send"></span></button>
+            <button type="submit" class="button3"> View recieved items <span
+                    class="glyphicon glyphicon-send"></span></button>
+
+
+
+
+        </fieldset> 
+    </form> -->
+</div>
+<!-- /.container -->
+
+
+<!--
+
+-->

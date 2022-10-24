@@ -4,12 +4,12 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Contact Us Today!</legend>
+<legend class="labelf"> <p>Place your requirement</p></legend>
 
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Supplier-Name Name</label>  
+  <label class="labelf">Supplier-Name Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -24,7 +24,7 @@
 <!-- Text input-->
        
 <div class="form-group">
-  <label class="col-md-4 control-label">Item Code</label>  
+  <label class="labelf">Item Code</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -36,7 +36,7 @@
 <!-- Text input-->
       
 <div class="form-group">
-  <label class="col-md-4 control-label">Item Name</label>  
+  <label class="labelf">Item Name</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -48,7 +48,7 @@
 <!-- Text input-->
  
 <div class="form-group">
-  <label class="col-md-4 control-label">Quantity</label>  
+  <label class="labelf">Quantity</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -60,11 +60,11 @@
 <!-- Select Basic -->
    
 <div class="form-group"> 
-  <label class="col-md-4 control-label">Site name</label>
+  <label class="labelf">Site name</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="state" class="form-control selectpicker" >
+    <select name="state" class="form-control selectpicker" formControlName="orderID">
       <option value=" " >Please select name of Site</option>
       <option>Site A</option>
       <option>Site B</option>
@@ -78,7 +78,7 @@
 <!-- Text area -->
   
 <div class="form-group">
-  <label class="col-md-4 control-label">Project Description</label>
+  <label class="labelf">Project Description</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -95,7 +95,7 @@
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
     <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
-    <button type="submit" class="btn btn-warning" routerLink="/update">Update <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" (click)="listOrders()">Update <span class="glyphicon glyphicon-send"></span></button>
     <button type="submit" class="btn btn-warning" (click)="onHandleTag('Angular')">Delete <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>

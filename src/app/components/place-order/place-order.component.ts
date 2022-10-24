@@ -22,18 +22,18 @@ export class PlaceOrderComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private apiService: APIService,
               private oneSignal: OneSignal) {
-                this.oneSignal.init({
-                  appId: '1b8918ca-191f-4dbe-86bb-423f77642cb5'
-                });
+
                }
 
   ngOnInit(): void {
-    this.placeOrderForm = this.formBuilder.group({
-        supplierName: new FormControl('',[Validators.required, Validators.minLength(2)]),
-        siteName: new FormControl('',[Validators.required, Validators.minLength(2)]),
-        itemCode: [''],
-        itemName: [''],
-        quantity: ['']
+    // In the follwing code we are creating attributes that the html form will consist of, we will later bind data to the attributes that we are creating now
+    this.placeOrderForm = this.formBuilder.group({ // Formbuilder allows us to create a form, it falls part of the "Relative forms Module"
+        supplierName: new FormControl('',[Validators.required, Validators.minLength(2)]), // Setting up attributes and also adding validations
+        siteName: new FormControl('',[Validators.required, Validators.minLength(2)]), // Setting up attributes and also adding validations
+        itemCode: [''], // Setting up attributes and also adding validations
+        itemName: [''], // Setting up attributes and also adding validations
+        quantity: [''], // Setting up attributes and also adding validations
+        orderID: ['']
     })
 
   
@@ -41,20 +41,20 @@ export class PlaceOrderComponent implements OnInit {
 
 async createOrder() {
   const newOrder = {
-    SupplierName: this.placeOrderForm?.controls['supplierName'].value,
-    SiteName: this.placeOrderForm?.controls['siteName'].value,
-    ItemCode: this.placeOrderForm?.controls['itemCode'].value,
-    ItemName: this.placeOrderForm?.controls['itemName'].value,
-    Quantity: this.placeOrderForm?.controls['quantity'].value,
+    SupplierName: this.placeOrderForm?.controls['supplierName'].value, // binding data from html form
+    SiteName: this.placeOrderForm?.controls['siteName'].value, // binding data from html form
+    ItemCode: this.placeOrderForm?.controls['itemCode'].value, // binding data from html form
+    ItemName: this.placeOrderForm?.controls['itemName'].value, // binding data from html form
+    Quantity: this.placeOrderForm?.controls['quantity'].value, // binding data from html form
 
   }
   
 
-  let result = await this.apiService.CreateOrder(newOrder);
+  let result = await this.apiService.CreateOrder(newOrder); // calling createOrder method and passing values that were binded in the previous code
 
-  this.allOrders.push(result);
+  this.allOrders.push(result); // after passing values to our method we can then push them to the rest of orders
   
-  alert("order created");
+  alert("order created"); // to confirm success(for debugging purposes)
   
   //debugger;
 }
@@ -67,7 +67,30 @@ onHandleTag(tag: string) {
 
 onRegister() {
   this.loading = true;
-  this
+
+}
+
+// The following method is for calling all items in the order table from dynamodb
+async listOrders() {
+  let result = await this.apiService.ListOrders(); // Calling listOrders method from apiService(note: whatever is on a service can be called in any part of the project)
+  this.allOrders = result.items; // puttin the aitems we got from the previous query to the arraylist we previously created.
+
+  for(var myOrders of this.allOrders) { // was trying to get only the id from order since it contains other attributes, wanted to pass that id in an update method
+  let queryid = myOrders.id
+
+  console.log(queryid); // printing the ids to confirm if the ids were succesfully retrieved.
+
+  }
+
+}
+
+onUpdate() {
+  
+  const NewUdate = {
+    id: "", 
+    SupplierName: "Athi",
+    SiteName: "Site B"
+  }
 }
 
 

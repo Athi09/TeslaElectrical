@@ -1,4 +1,25 @@
 {
+  "electrical": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-teslaweb-electrical-72818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::404861564139:role/amplify-teslaweb-electrical-72818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::404861564139:role/amplify-teslaweb-electrical-72818-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-teslaweb-electrical-72818-deployment",
+      "UnauthRoleName": "amplify-teslaweb-electrical-72818-unauthRole",
+      "StackName": "amplify-teslaweb-electrical-72818",
+      "StackId": "arn:aws:cloudformation:us-east-1:404861564139:stack/amplify-teslaweb-electrical-72818/6ea17890-536d-11ed-8c82-127e5229ddfd",
+      "AmplifyAppId": "d2ui5ljeuyz76w"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2ui5ljeuyz76w",
+          "type": "cicd"
+        }
+      }
+    }
+  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-teslaweb-dev-113415-authRole",
@@ -10,6 +31,17 @@
       "StackName": "amplify-teslaweb-dev-113415",
       "StackId": "arn:aws:cloudformation:us-east-1:404861564139:stack/amplify-teslaweb-dev-113415/687a5b50-38c7-11ed-ba7f-0ab634256341",
       "AmplifyAppId": "d2ui5ljeuyz76w"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2ui5ljeuyz76w",
+          "type": "cicd"
+        }
+      },
+      "auth": {
+        "teslawebc0f87e9a": {}
+      }
     }
   }
 }

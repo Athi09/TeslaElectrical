@@ -1,0 +1,69 @@
+<div class="container">
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form" [formGroup]="projectForm" (ngSubmit)="createProject()">
+<fieldset class="fieldStyle">
+
+<!-- Form Name -->
+<legend class="labelf"> <p>Create new project</p></legend>
+
+<!-- Text input-->
+
+
+
+<!-- Text input-->
+      
+<div class="form-group" align-items-center>
+  <label class="labelf">Project name</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input formControlName="projectName" placeholder="Project name" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!--Text input -->
+<div class="form-group">
+  <label class="labelf">Project Code</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input formControlName="projectCode" placeholder="Project Code" class="form-control" type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Select Basic -->
+
+<!-- Text area -->
+<div class="form-group"> 
+  <label class="labelf">Assigned to</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select name="state" class="form-control selectpicker" formControlName="siteManager">
+      <option>Shingi</option>
+      <option>Neo</option>
+      <option>Nhlahla</option>
+      <option>Mpho</option>
+      <option>Rashaad</option>
+    </select>
+  </div>
+</div>
+</div>
+  
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+    <button type="submit" class="btn btn-warning" style="margin-top: 10px;">Save project <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" style="margin-top: 10px;" routerLink="/projectName">View list of projects <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+<!-- /.container -->

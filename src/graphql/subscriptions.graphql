@@ -1,36 +1,192 @@
 # this is an auto generated file. This will be overwritten
+subscription OnCreateProjectt {
+  onCreateProjectt {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProjectt {
+  onUpdateProjectt {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProjectt {
+  onDeleteProjectt {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateMaterial {
+  onCreateMaterial {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
+subscription OnUpdateMaterial {
+  onUpdateMaterial {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
+subscription OnDeleteMaterial {
+  onDeleteMaterial {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
 subscription OnCreateOrder {
   onCreateOrder {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
 }
 subscription OnUpdateOrder {
   onUpdateOrder {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
 }
 subscription OnDeleteOrder {
   onDeleteOrder {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
@@ -102,7 +258,8 @@ subscription OnCreateRequirements {
   onCreateRequirements {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
     id
     createdAt
     updatedAt
@@ -112,7 +269,8 @@ subscription OnUpdateRequirements {
   onUpdateRequirements {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
     id
     createdAt
     updatedAt
@@ -122,7 +280,35 @@ subscription OnDeleteRequirements {
   onDeleteRequirements {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProjectName {
+  onCreateProjectName {
+    projectName
+    siteName
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProjectName {
+  onUpdateProjectName {
+    projectName
+    siteName
+    id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProjectName {
+  onDeleteProjectName {
+    projectName
+    siteName
     id
     createdAt
     updatedAt

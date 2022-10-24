@@ -1,12 +1,169 @@
 # this is an auto generated file. This will be overwritten
+query SearchMaterials(
+  $filter: SearchableMaterialFilterInput
+  $sort: [SearchableMaterialSortInput]
+  $limit: Int
+  $nextToken: String
+  $from: Int
+  $aggregates: [SearchableMaterialAggregationInput]
+) {
+  searchMaterials(
+    filter: $filter
+    sort: $sort
+    limit: $limit
+    nextToken: $nextToken
+    from: $from
+    aggregates: $aggregates
+  ) {
+    items {
+      ProjectName
+      MaterialDesc
+      Quantity
+      UnitOfMeasure
+      Status
+      QuantityRecieved
+      QuantityShort
+      Project {
+        ProjectName
+        ProjectCode
+        SiteManager
+        id
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      projecttMaterialId
+    }
+    nextToken
+    total
+    aggregateItems {
+      name
+      result {
+        ... on SearchableAggregateScalarResult {
+          value
+        }
+        ... on SearchableAggregateBucketResult {
+          buckets {
+            key
+            doc_count
+          }
+        }
+      }
+    }
+  }
+}
+query GetProjectt($id: ID!) {
+  getProjectt(id: $id) {
+    ProjectName
+    ProjectCode
+    SiteManager
+    Material {
+      items {
+        ProjectName
+        MaterialDesc
+        Quantity
+        UnitOfMeasure
+        Status
+        QuantityRecieved
+        QuantityShort
+        id
+        createdAt
+        updatedAt
+        projecttMaterialId
+      }
+      nextToken
+    }
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListProjectts(
+  $filter: ModelProjecttFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetMaterial($id: ID!) {
+  getMaterial(id: $id) {
+    ProjectName
+    MaterialDesc
+    Quantity
+    UnitOfMeasure
+    Status
+    QuantityRecieved
+    QuantityShort
+    Project {
+      ProjectName
+      ProjectCode
+      SiteManager
+      Material {
+        nextToken
+      }
+      id
+      createdAt
+      updatedAt
+    }
+    id
+    createdAt
+    updatedAt
+    projecttMaterialId
+  }
+}
+query ListMaterials(
+  $filter: ModelMaterialFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMaterials(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      ProjectName
+      MaterialDesc
+      Quantity
+      UnitOfMeasure
+      Status
+      QuantityRecieved
+      QuantityShort
+      Project {
+        ProjectName
+        ProjectCode
+        SiteManager
+        id
+        createdAt
+        updatedAt
+      }
+      id
+      createdAt
+      updatedAt
+      projecttMaterialId
+    }
+    nextToken
+  }
+}
 query GetOrder($id: ID!) {
   getOrder(id: $id) {
+    id
     SupplierName
     SiteName
     ItemCode
     ItemName
     Quantity
-    id
     createdAt
     updatedAt
   }
@@ -18,12 +175,12 @@ query ListOrders(
 ) {
   listOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
+      id
       SupplierName
       SiteName
       ItemCode
       ItemName
       Quantity
-      id
       createdAt
       updatedAt
     }
@@ -90,7 +247,8 @@ query GetRequirements($id: ID!) {
   getRequirements(id: $id) {
     name
     Quantity
-    siteNumber
+    siteName
+    projectName
     id
     createdAt
     updatedAt
@@ -105,7 +263,33 @@ query ListRequirements(
     items {
       name
       Quantity
-      siteNumber
+      siteName
+      projectName
+      id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectName($id: ID!) {
+  getProjectName(id: $id) {
+    projectName
+    siteName
+    id
+    createdAt
+    updatedAt
+  }
+}
+query ListProjectNames(
+  $filter: ModelProjectNameFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectNames(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      projectName
+      siteName
       id
       createdAt
       updatedAt

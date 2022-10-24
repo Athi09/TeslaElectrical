@@ -1,0 +1,61 @@
+<div class="backCol">
+
+</div>
+<form class="well form-horizontal" action=" " method="post" id="contact_form" [formGroup]="projectMaterialForm"
+    style="float:left">
+
+    <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+        <label class="labelf" style="color:aliceblue">Select from a list of Projects:</label>
+        <div class="col-md-4 selectContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                <select name="state" class="form-control selectpicker" formControlName="projectName"
+                    (click)="listMaterial()">
+                    <!--Value="{{ project }}" <option value=" " >Please select id of the product you would like to update</option> -->
+                    <option *ngFor="let project of allProjects" [ngValue]="project.ProjectName"> {{ project.ProjectName
+                        }} </option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" style="margin-top: 15px; margin-left: 15%;">
+        <label class="labelf" style="color:aliceblue">Filter the type of material you would like to see:</label>
+        <div class="col-md-4 selectContainer">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                <select name="state" class="form-control selectpicker" formControlName="filter"
+                    (click)="listPendingMaterial()">
+                    <!--Value="{{ project }}" <option value=" " >Please select id of the product you would like to update</option> -->
+                    <option> Approved </option>
+                    <option> Pending </option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+
+<table class="tableStyle">
+    <tr class="thStyle">
+        <th class="thStyle">Project-Name:</th>
+        <th class="thStyle">Material Description:</th>
+        <th class="thStyle">Quantity:</th>
+        <th class="thStyle">Quantity Recieved:</th>
+        <th class="thStyle">Quantity Short:</th>
+        <th class="thStyle">Unit of Measure:</th>
+        <th class="thStyle"></th>
+    </tr>
+    <tr *ngFor="let material of allorders">
+        <td class="thStyle" id="supName" style="text-transform: uppercase">{{ material.ProjectName}} </td>
+        <td class="thStyle" style="text-transform: uppercase">{{ material.MaterialDesc }} </td>
+        <td class="thStyle" style="text-transform: uppercase"> {{ material.Quantity }}</td>
+        <td class="thStyle" style="text-transform: uppercase"> {{ material.QuantityRecieved }}</td>
+        <td class="thStyle" style="text-transform: uppercase"> {{ material.QuantityShort }}</td>
+        <td class="thStyle" style="text-transform: uppercase"> {{ material.UnitOfMeasure }}</td>
+        <td class="thStyle"> <button class="button1" style="color:azure" (click)="openDialog(material)">Confirm Order</button></td>
+    </tr>
+</table>

@@ -1,0 +1,47 @@
+<!--https://v12.material.angular.io/components/table/overview-->
+<h1 mat-dialog-title>Are you sure you want to confirm order?</h1>
+<h1 mat-dialog-title>Press confirm to accept the order</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="materialForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Project-Name:</mat-label>
+            <input readonly formControlName="projectName" matInput placeholder="Project-Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Material Description:</mat-label>
+            <input readonly formControlName="materialDesc"  matInput placeholder="Material Description" contenteditable="false">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Quantity:</mat-label>
+            <input readonly formControlName="quantity"  matInput placeholder="Quantity" contenteditable="false">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Quantity Recieved:</mat-label>
+            <input formControlName="quantityRecieved"  matInput placeholder="Quantity Recieved" contenteditable="false">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Quantity Short:</mat-label>
+            <input readonly formControlName="quantityShort"  matInput placeholder="Quantity Short" contenteditable="false">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Unit of measure:</mat-label>
+            <input readonly formControlName="unitOfMeasure"  matInput placeholder="Unit of measure" contenteditable="false">
+        </mat-form-field>
+
+    </form>
+
+
+    <div mat-dialog-action [align]="'end'">
+        <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+        <button style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close (click)="saveChanges()">Confirm Order</button>
+
+    </div>
+
+
+</div>

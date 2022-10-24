@@ -1,15 +1,15 @@
 <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form" [formGroup]="placeOrderForm">
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form" > <!--[formGroup]="placeOrderForm"-->
 <fieldset>
 
 <!-- Form Name -->
-<legend>Contact Us Today!</legend>
+<legend class="labelf">Contact Us Today!</legend>
 
 <!-- Text input-->
 
 <div class="form-group">
-  <label class="col-md-4 control-label">Supplier-Name Name</label>  
+  <label class="labelf">Supplier-Name Name</label>  
   <div class="col-md-4 inputGroupContainer">
   <div class="input-group">
   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -24,7 +24,7 @@
 <!-- Text input-->
        
 <div class="form-group">
-  <label class="col-md-4 control-label">Item Code</label>  
+  <label class="labelf">Item Code</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
@@ -36,7 +36,7 @@
 <!-- Text input-->
       
 <div class="form-group">
-  <label class="col-md-4 control-label">Item Name</label>  
+  <label class="labelf">Item Name</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -48,7 +48,7 @@
 <!-- Text input-->
  
 <div class="form-group">
-  <label class="col-md-4 control-label">Quantity</label>  
+  <label class="labelf">Quantity</label>  
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
@@ -60,11 +60,11 @@
 <!-- Select Basic -->
    
 <div class="form-group"> 
-  <label class="col-md-4 control-label">Site name</label>
+  <label class="labelf">Site name</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-    <select name="state" class="form-control selectpicker" >
+    <select name="state" class="form-control selectpicker" formControlName="siteName">
       <option value=" " >Please select name of Site</option>
       <option>Site A</option>
       <option>Site B</option>
@@ -76,14 +76,13 @@
 </div>
 
 <div class="form-group"> 
-    <label class="col-md-4 control-label">Order ID</label>
+    <label class="labelf">Order ID</label>
       <div class="col-md-4 selectContainer">
       <div class="input-group">
           <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-      <select name="state" class="form-control selectpicker" >
-        <option value=" " >Please select id of the product you would like to update</option>
-        <option *ngFor="let order of allOrders"> order.id </option>
-       
+      <select name="state" class="form-control selectpicker" formControlName="orderID">
+       <!-- <option value=" " >Please select id of the product you would like to update</option> -->
+        <option *ngFor="let order of allOrders" value="{{ order.id }}"> {{ order.id }} </option> <!--Populating a dropdown list with data from an arraylist that we defined in ts file-->
       </select>
     </div>
   </div>
@@ -92,7 +91,7 @@
 <!-- Text area -->
   
 <div class="form-group">
-  <label class="col-md-4 control-label">Project Description</label>
+  <label class="labelf">Project Description</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -109,7 +108,7 @@
   <label class="col-md-4 control-label"></label>
   <div class="col-md-4">
     <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
-    <button type="submit" class="btn btn-warning" >Update <span class="glyphicon glyphicon-send"></span></button>
+    <button type="submit" class="btn btn-warning" (click)="updateOrder()">Update <span class="glyphicon glyphicon-send"></span></button> <!--Calling a method for updating, method is defined in ts file-->
     <button type="submit" class="btn btn-warning" >Delete <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>

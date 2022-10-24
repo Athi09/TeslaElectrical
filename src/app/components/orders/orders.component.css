@@ -1,0 +1,24 @@
+.tableStyle {
+    border: 1px solid;
+    width: 100%;
+    height: 150px;
+    color: bisque;
+  }
+  
+  .thStyle {
+    border: 1px solid;
+    width: 10%;
+    height: 10px;
+    text-align: center;
+    color: bisque;
+  }
+  
+  .button1 {
+    background-color:darkorange;
+    color: black;
+    border: 2px solid black; /* Green */
+    width: 90px;
+    height: 30px;
+    font-weight: bold;
+  }
+  

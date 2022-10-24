@@ -5,6 +5,19 @@ html{    background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat
   height:100%;
 }
 
+.container {
+	align-content: center;
+	align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 120px;
+}
+
+.labelf {
+	color: #fbfbfb;
+}
+
+
 #feedback-page{
 	text-align:center;
 }

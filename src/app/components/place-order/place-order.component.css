@@ -5,6 +5,14 @@ html{    background:url(http://thekitemap.com/images/feedback-img.jpg) no-repeat
   height:100%;
 }
 
+.container {
+	align-content: center;
+	align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-top: 120px;
+}
+
 #feedback-page{
 	text-align:center;
 }
@@ -153,6 +161,10 @@ input:focus, textarea:focus {
 .submit:hover .ease{
   width:100%;
   background-color:white;
+}
+
+.labelf {
+	color: #fbfbfb;
 }
 
 @media only screen and (max-width: 580px) {
